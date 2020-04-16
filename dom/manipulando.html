@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <tile>Curso de JavaScript</tile>
+    </head>
+    <body>
+        <div id="app">
+            <!-- <input type="text" name="nome" id="nome"/>
+            <button class="botao"> Adicionar</button> -->
+
+            <input type="text" name="nome"/>
+            <button class="botao"> Adicionar</button>
+        </div>
+        <script>
+           /* var inputElement = document.getElementById('nome')
+            console.log(inputElement)*/
+
+            // var inputElement = document.getElementsByName('nome')[0]//retorna uma array se não passar o vetor 
+            // console.log(inputElement)
+
+            var inputElement = document.querySelector('input[name=nome]')
+
+            var btinputElement = document.querySelector('button.botao')
+
+            btinputElement.onclick = function(){
+                var text = inputElement.value
+                alert(text)
+            }
+            console.log(inputElement)
+        </script>
+    </body>
+</html>
