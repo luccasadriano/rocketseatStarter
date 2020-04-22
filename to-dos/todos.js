@@ -2,12 +2,7 @@ var listElement = document.querySelector('#app ul')
 var inputElement = document.querySelector('#app input')
 var buttonElement = document.querySelector('#app button')
 
-var todos = [//caso esse array precisa de mais informação, fazer um array de objeto. exemplo:
-    //{text: 'Fazer Café', propriedade: 1, },
-    'Fazer Café',
-    'Estudar JS',
-    'Acessar a comunidade da rocketseat'
-]
+var todos = JSON.parse(localStorage.getItem('list_todos') || []) 
 
 function renderTodos(){
 
@@ -20,11 +15,12 @@ function renderTodos(){
         var linkElement = document.createElement('a')
         linkElement.setAttribute('href', '#')
 
-        var pos = todos.indexOf(todo)
-        linkElement.setAttribute('noclick', 'deleteTodo(' + pos + ')') 
 
-        var linkText = document.createTextNode('Excluir')
+        var pos = todos.indexOf(todo)//pesquisando o indece do array
+        linkElement.setAttribute('onclick', 'deleteTodo('+pos+')')
 
+        var linkText = document.createTextNode('Excluir') 
+       
         linkElement.appendChild(linkText)
 
         todoElement.appendChild(todoText)
@@ -42,12 +38,20 @@ function addTodo(){
     todos.push(todoText)
     inputElement.value = ''
     renderTodos()
+    saveToStorage()
 
 }
 
 buttonElement.onclick = addTodo
 
+
 function deleteTodo(pos){
     todos.splice(pos, 1)
     renderTodos()
+    saveToStorage()
+}
+
+function saveToStorage(){//storege é uma chave valor, não grava array ou objeto
+    console.log("foi carai")
+    localStorage.setItem('list_todos', JSON.stringify(todos))//transformando o array em json
 }
