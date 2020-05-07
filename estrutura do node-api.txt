@@ -1,0 +1,36 @@
+criar uma pasta
+entrar na pasta
+
+npm init -y  -> para criar o package.json, o package.json serve para guardar a informação das versão da dependecia do projeto
+
+npm install express -> express instalar o express, express é um microframeword para ajudar a lidar com rotas e views. as rotas são os endereços da url que o usuario vai poder acessar na API, e as views são as formas de visualização.
+
+req = requisição, no qual esta fazendo pro servidor, acessando via URL, podemos pegar do req:
+parametros;
+corpo e cabeçalho da requisição;
+autenticação.
+
+res = resposta do servidor, respondendo de acordo com a requisição.
+
+npm install -D nodemon  ->(como dependencia de desenvolvimento) faz praticamente a reinicialização do servidor toda fez quer alterar alguma informação dentro do codígo.
+
+//são dependencias que são utilizadas apenas no ambiente de desenvolvimento
+
+Docker é um software que permite fazer a contenderização de recursos de software ou de aplicação.
+
+docker ps -a
+docker start mongodb
+
+
+model - modelo mvc, model representa uma tabela dentro do banco de dados
+
+Criar uma pasta SRC para colocar o model
+
+schimas - é os campos que a tabela pode ter e os tipos de valores esses campos vão salvar
+
+biblioteca require-dir
+npm install require-dir - faz o papel de require em um diretorio em todos os arquivos automaticamente. pra não precisar fazer require em cada um deles rsrs
+
+npm install mongoose-paginate -> mongoose-paginate para limitar o resultado dos item do banco
+
+npm install cors -> cors para acessar a api de outros dominios 
